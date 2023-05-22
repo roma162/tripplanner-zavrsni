@@ -15,7 +15,7 @@ const UserCard = ({userId, handleChange, loc, picturePath} ) => {
     const token = useSelector((state) => state.token);
 
     const getUser = async () => {
-        const response = await fetch(`http://localhost:3001/users/${userId}`, {
+        const response = await fetch(`https://tripplanner-zavrsni.onrender.com/users/${userId}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
