@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { HashRouter, Navigate, Routes, Route } from "react-router-dom";
 import Home from "scenes/Home";
 import Welcome from "scenes/Welcome";
 import Profile from "scenes/Profile";
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="app">
-     <BrowserRouter>
+     <HashRouter>
         <CssBaseline />
         <Routes>
           <Route path="/" element={<Welcome/>} />
@@ -20,7 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile/:userId" element={isAuth ? <Profile /> : <Navigate to="/"/>} />
         </Routes>
-     </BrowserRouter>
+     </HashRouter>
     </div>
   );
 }
