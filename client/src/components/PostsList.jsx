@@ -8,9 +8,9 @@ const PostsList = ({ userId, isProfile = false, filterList, userRole }) => {
   const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
   const loggedInUserId = useSelector((state) => state.user._id);
-  console.log("App rerendered!")
+
   const getPosts = async () => {
-    const response = await fetch("http://localhost:3001/posts", {
+    const response = await fetch("https://tripplanner-zavrsni.onrender.com/posts", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -20,7 +20,7 @@ const PostsList = ({ userId, isProfile = false, filterList, userRole }) => {
 
   const getUserPosts = async () => {
     const response = await fetch(
-      `http://localhost:3001/posts/${userId}/posts`,
+      `https://tripplanner-zavrsni.onrender.com/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
