@@ -8,6 +8,4 @@ const router = express.Router();
 
 router.get("/:id", verifyToken, getUser);
 
-//router.patch('/:id', verifyToken, patchRole);
-
 export default router;
