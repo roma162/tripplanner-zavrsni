@@ -1,7 +1,7 @@
 import React from 'react'
 import Dropzone from "react-dropzone";
 import UserImage from "components/UserImage";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import {
@@ -54,10 +54,6 @@ const SubmitPost = ({ picturePath, location }) => {
         setPost("");
         setPlace("");
     };
-
-    /*useEffect(()=>{
-        window.location.reload(false);    
-    },[role]) */
 
     return (
         <div className='mypost mt-4 '>
