@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "80px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://elaborate-heliotrope-449cfa.netlify.app/assets/${image}`}
+        src={`https://tripplanner-zavrsni.onrender.com/assets/${image}`}
       />
     </div>
   )

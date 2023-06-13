@@ -19,7 +19,7 @@ const UserCard = ({userId, handleChange, loc, picturePath } ) => {
     const dispatch = useDispatch();
 
     const getUser = async () => {
-        const response = await fetch(`https://elaborate-heliotrope-449cfa.netlify.app/users/${userId}`, {
+        const response = await fetch(`https://tripplanner-zavrsni.onrender.com/users/${userId}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -32,7 +32,7 @@ const UserCard = ({userId, handleChange, loc, picturePath } ) => {
         if ( role === "Recenzent" ){
             roleChange = "Putnik"
         } else roleChange = "Recenzent";
-        const response = await fetch(`https://elaborate-heliotrope-449cfa.netlify.app/users/${userId}`, {
+        const response = await fetch(`https://tripplanner-zavrsni.onrender.com/users/${userId}`, {
           method: "PATCH",
           headers: {
             Authorization: `Bearer ${token}`,

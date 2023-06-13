@@ -14,7 +14,7 @@ const ProfilePage = () => {
   const { role, picturePath} = useSelector((state) => state.user);
 
   const getUser = async () => {
-    const response = await fetch(`https://elaborate-heliotrope-449cfa.netlify.app/users/${userId}`, {
+    const response = await fetch(`https://tripplanner-zavrsni.onrender.com/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
