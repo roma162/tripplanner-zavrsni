@@ -31,13 +31,24 @@
             color: black;
             cursor: pointer;
         }
+    
     }
 
     &__desc{
         padding: 0.5rem;
-
+        
         span{
             color: #B7B7B7;
+        }
+        &--toggle{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button{
+            text-transform: lowercase;
+            font-style: italic;
         }
     }
     

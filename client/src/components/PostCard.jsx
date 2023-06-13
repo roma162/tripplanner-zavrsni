@@ -28,7 +28,7 @@ const PostCard = ({
   const [newComment, setNewComment] = useState("");
 
   const patchLike = async () => {
-    const response = await fetch(`https://tripplanner-zavrsni.onrender.com/posts/${postId}/like`, {
+    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -42,7 +42,7 @@ const PostCard = ({
   };
 
   const postComment = async () => {
-    const response = await fetch(`https://tripplanner-zavrsni.onrender.com/posts/${postId}/comments`, {
+    const response = await fetch(`http://localhost:3001/posts/${postId}/comments`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -53,7 +53,7 @@ const PostCard = ({
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
   }
-
+  
 
   return (
     <div className="posts mt-4" key={postId}>
@@ -98,7 +98,7 @@ const PostCard = ({
             height="auto"
             alt="post"
             style={{ borderRadius: "0.75rem", marginTop: "0.75rem", borderTop: "0.75px solid #d5d5d5"}}
-            src={`https://tripplanner-zavrsni.onrender.com/assets/${picturePath}`}
+            src={`http://localhost:3001/assets/${picturePath}`}
           />
       )}
       <div>
@@ -142,7 +142,7 @@ const PostCard = ({
                 backgroundColor: "white",
             }}
           >
-          Komentiraj
+            Komentiraj
           </Button>
           {Object.keys(comments)?.slice(0).reverse().map((comment, i) => (
             <div key={`${name}-${i}`}>

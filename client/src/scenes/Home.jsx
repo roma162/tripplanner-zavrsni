@@ -24,13 +24,13 @@ const Home = () => {
       <div className="home__content">
         { isNonMobileScreens &&
           <div className="home__profile">
-            <UserCard userId={_id} handleChange={handleChange} picturePath={picturePath}/>
+            <UserCard userId={_id} handleChange={handleChange} picturePath={picturePath} />
           </div>
         }
         <div className="home__mypost">
-          {//role === "Recenzent" &&
+          {role === "Recenzent" ? (
             <SubmitPost picturePath={picturePath} location={location} role={role}/>
-          }
+          ): null }
           
           <PostsList userId={_id} loc={filterLocation} filterList={filterLocation} userRole={role} />
         </div>  

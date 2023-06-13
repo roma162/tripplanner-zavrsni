@@ -17,6 +17,7 @@ export const authSlice = createSlice({
       setLogout: (state) => {
         state.user = null;
         state.token = null;
+        window.location.href = '/#/login';
       },
       setPosts: (state, action) => {
         state.posts = action.payload.posts;

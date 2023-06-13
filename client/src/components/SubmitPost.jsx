@@ -1,7 +1,7 @@
 import React from 'react'
 import Dropzone from "react-dropzone";
 import UserImage from "components/UserImage";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import {
@@ -41,7 +41,7 @@ const SubmitPost = ({ picturePath, location }) => {
             formData.append("picture", image);
             formData.append("picturePath", image.name);
         }
-        const response = await fetch(`https://tripplanner-zavrsni.onrender.com/posts`, {
+        const response = await fetch(`http://localhost:3001/posts`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
             body: formData,
@@ -55,8 +55,12 @@ const SubmitPost = ({ picturePath, location }) => {
         setPlace("");
     };
 
+    /*useEffect(()=>{
+        window.location.reload(false);    
+    },[role]) */
+
     return (
-        <div className='mypost mt-4'>
+        <div className='mypost mt-4 '>
             <div className='flex gap'>
                 <UserImage image={picturePath} />
                 <InputBase

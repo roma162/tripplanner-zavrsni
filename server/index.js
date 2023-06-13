@@ -57,6 +57,17 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
+app.patch("/users/:id", async (req, res) => { 
+  try {
+    const id = req.params.id;
+    const user = await User.findOneAndUpdate(id, req.body, {new: true});
+    console.log(user);
+    res.json({user})
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({err: "Something went wrong"});
+  }
+});
 
 /* MONGOOSE SETUP */
 
