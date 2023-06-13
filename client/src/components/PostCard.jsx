@@ -28,7 +28,7 @@ const PostCard = ({
   const [newComment, setNewComment] = useState("");
 
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+    const response = await fetch(`https://elaborate-heliotrope-449cfa.netlify.app/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -42,7 +42,7 @@ const PostCard = ({
   };
 
   const postComment = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${postId}/comments`, {
+    const response = await fetch(`https://elaborate-heliotrope-449cfa.netlify.app/posts/${postId}/comments`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -98,7 +98,7 @@ const PostCard = ({
             height="auto"
             alt="post"
             style={{ borderRadius: "0.75rem", marginTop: "0.75rem", borderTop: "0.75px solid #d5d5d5"}}
-            src={`http://localhost:3001/assets/${picturePath}`}
+            src={`https://elaborate-heliotrope-449cfa.netlify.app/assets/${picturePath}`}
           />
       )}
       <div>

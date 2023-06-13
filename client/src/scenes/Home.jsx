@@ -34,9 +34,6 @@ const Home = () => {
           
           <PostsList userId={_id} loc={filterLocation} filterList={filterLocation} userRole={role} />
         </div>  
-       {/* <div className="home__profile">
-          <UserCard userId={_id}/>
-  </div>*/}
       </div>
     </div>
     
