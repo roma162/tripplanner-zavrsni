@@ -57,6 +57,7 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
+app.options('*', cors()) 
 app.patch("/users/:id", cors(), async (req, res) => { 
   try {
     const id = req.params.id;
