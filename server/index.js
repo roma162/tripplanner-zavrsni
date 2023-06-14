@@ -57,7 +57,7 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
-app.patch("/users/:id", async (req, res) => { 
+app.patch("/users/:id", cors(), async (req, res) => { 
   try {
     const id = req.params.id;
     const user = await User.findOneAndUpdate(id, req.body, {new: true});
