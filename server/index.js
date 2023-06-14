@@ -33,7 +33,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, 'public/assets')));
-app.options('/users/:id', cors())
+
 /* FILE STORAGE */
 
 const storage = multer.diskStorage({
@@ -57,7 +57,7 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
-app.options('*', cors()) 
+app.options("/users/:id", cors()) 
 app.patch("/users/:id", cors(), async (req, res) => { 
   try {
     const id = req.params.id;
