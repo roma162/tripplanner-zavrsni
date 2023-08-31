@@ -53,7 +53,7 @@ const Welcome = () => {
                 <AboutUs />
             </Element>
             <Element name="test2" className="element">
-                <Gallery />
+                //<Gallery />
             </Element>
             {isNonMobileScreens && (
             <div className="space"></div> )}
