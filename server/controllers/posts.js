@@ -103,3 +103,14 @@ export const postComment = async (req, res) => {
 
     }
 };
+
+export const postDelete = async (req, res) => {
+    try {
+        const {id} = req.params;
+        await Post.findByIdAndDelete(id);
+        res.status(204).end();
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
+};
