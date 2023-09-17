@@ -60,8 +60,8 @@ app.use("/posts", postRoutes);
 app.options("/users/:id", cors()) 
 app.patch("/users/:id", cors(), async (req, res) => { 
   try {
-    const id = req.params.id;
-    const user = await User.findOneAndUpdate(id, req.body, {new: true});
+    const {userId, changeRole} = req.body
+    const user = await User.findByIdAndUpdate(userId, {role: changeRole}, {new: true});
     console.log(user);
     res.json({user})
   } catch (err) {
