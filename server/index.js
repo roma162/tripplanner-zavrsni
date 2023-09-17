@@ -17,6 +17,7 @@ import { verifyToken } from "./middleware/auth.js";
 import User from "./models/User.js";
 import Post from "./models/Post.js";
 import { users, posts } from "./data/index.js";
+import { postDelete } from "./controllers/posts.js";
 
 mongoose.set('strictQuery', true);
 
@@ -69,6 +70,10 @@ app.patch("/users/:id", cors(), async (req, res) => {
     res.status(500).json({err: "Something went wrong"});
   }
 });
+
+/* DELETE */
+
+app.delete("/posts/:id", verifyToken , postDelete);
 
 /* MONGOOSE SETUP */
 
